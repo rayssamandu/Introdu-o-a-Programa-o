@@ -25,10 +25,13 @@ while valid_usuario == False:
     usuario = input('DIGITE A OPÇÃO DESEJADA: ').lower()
     if usuario == "a":
         palavra = random.choice(alimentos)
+        break
     elif usuario == "l":
         palavra = random.choice(lugares)
+        break
     elif usuario == "o":
         palavra = random.choice(objetos)
+        break
     else:
         valid_usuario = True
         print("A categoria escolhida não é válida, por favor, selecione uma das opções do Menu!")
