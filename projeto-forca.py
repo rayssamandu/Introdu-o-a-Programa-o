@@ -1,9 +1,39 @@
-palavra = input("Digite a palavra secreta:").lower().strip()
-for x in range(100):
-    print()
+import random
+
+print('''
+    BEM VINDO (A) AO JOGO DA FORCA !
+    O objetivo deste jogo é descobrir uma palavra adivinhando as letras que ela possui. 
+    A cada rodada, os jogadores irão simultaneamente escolher uma letra que suspeitem fazer parte da palavra. 
+    Caso a palavra contenha esta letra, será mostrado em que posição(ões) ela está. Ao contrário, o jogador será enforcado.
+    Você tem 6 chances.
+    BOA SORTE !
+==== MENU: ====
+[1] - Alimentos
+[2] - Lugares
+[3] - Objetos
+''')
+alimentos = ['JABOTICABA', 'PINHA', 'MELANCIA', 'MANGA', 'GOIABA']
+lugares = ['GRAMADO', 'PARATI', 'SALVADOR', 'BANANEIRAS', 'MEXICO']
+objetos = ['TECLADO', 'POLTRONA', 'QUADRO', 'TAPETE', 'TALHER']
 digitadas = []
 acertos = []
 erros = 0
+
+valid_usuario = False
+
+while valid_usuario == False:
+    usuario = input('DIGITE A OPÇÃO DESEJADA: ').lower()
+    if usuario == "a":
+        palavra = random.choice(alimentos)
+    elif usuario == "l":
+        palavra = random.choice(lugares)
+    elif usuario == "o":
+        palavra = random.choice(objetos)
+    else:
+        valid_usuario = True
+        print("A categoria escolhida não é válida, por favor, selecione uma das opções do Menu!")
+
+
 while True:
     senha = ""
     for letra in palavra:
